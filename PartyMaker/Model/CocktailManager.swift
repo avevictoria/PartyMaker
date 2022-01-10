@@ -8,7 +8,7 @@
 import Foundation
 
 protocol CocktailManagerDelegate {
-    func didUpdateName(model: CocktailModel)
+    func didUpdateName(drinks: [Drink])
     func didFailWithError(error: Error)
 }
 
@@ -34,7 +34,7 @@ struct CocktailManager {
                 if let safeData = data {
                     if let cocktailInfo = self.parseJSON(safeData) {
                         DispatchQueue.main.async {
-                            self.delegate?.didUpdateName(model: cocktailInfo)
+                            self.delegate?.didUpdateName(drinks: cocktailInfo)
                         }
                     }
                 }
@@ -43,14 +43,16 @@ struct CocktailManager {
         }
     }
         
-        func parseJSON(_ data: Data) -> CocktailModel? {
+        func parseJSON(_ data: Data) -> [Drink]? {
             
             let decoder = JSONDecoder()
             do {
                 let decodedData = try decoder.decode(CocktailData.self, from: data)
-                let name = decodedData.drinks[0].strDrink
-                let cocktail = CocktailModel(name: name)
-                return cocktail
+                let cocktails = decodedData.drinks
+                
+//                let name = decodedData.drinks[0].strDrink
+//                let cocktail = CocktailModel(name: name)
+                return cocktails
                 
             } catch {
                 delegate?.didFailWithError(error: error)
