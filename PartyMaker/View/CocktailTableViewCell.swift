@@ -10,14 +10,18 @@ import UIKit
 class CocktailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var cocktailTitle: UILabel!
+    @IBOutlet weak var cocktailImage: UIImageView!
+    
+    var onReuse: () -> Void = {}
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        contentView.layer.cornerRadius = contentView.frame.size.height / 5
+        onReuse()
+        cocktailImage.image = nil
+//        contentView.layer.cornerRadius = contentView.frame.size.height / 5
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 

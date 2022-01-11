@@ -12,15 +12,11 @@ protocol CocktailManagerDelegate {
     func didFailWithError(error: Error)
 }
 
-
-
-
 struct CocktailManager {
     
     var delegate: CocktailManagerDelegate?
     
     func getCocktail() {
-//        9973533
         let cocktailURL = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
         
         if let url = URL(string: cocktailURL) {
@@ -42,22 +38,18 @@ struct CocktailManager {
             task.resume()
         }
     }
+    
+    func parseJSON(_ data: Data) -> [Drink]? {
         
-        func parseJSON(_ data: Data) -> [Drink]? {
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(CocktailData.self, from: data)
+            let cocktails = decodedData.drinks
+            return cocktails
             
-            let decoder = JSONDecoder()
-            do {
-                let decodedData = try decoder.decode(CocktailData.self, from: data)
-                let cocktails = decodedData.drinks
-                
-//                let name = decodedData.drinks[0].strDrink
-//                let cocktail = CocktailModel(name: name)
-                return cocktails
-                
-            } catch {
-                delegate?.didFailWithError(error: error)
-                return nil
-            }
+        } catch {
+            delegate?.didFailWithError(error: error)
+            return nil
         }
-        
     }
+}
