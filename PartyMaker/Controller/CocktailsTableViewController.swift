@@ -30,10 +30,6 @@ class CocktailsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! CocktailTableViewCell
         cell.cocktailTitle.text = listOfCocktails[indexPath.row].strDrink
-        //        cell.cocktailImage.setImageFromURl(ImageUrl: listOfCocktails[indexPath.row].strDrinkThumb)
-        //        if let url = URL(string: listOfCocktails[indexPath.row].strDrinkThumb) {
-        //            cell.cocktailImage.load(url: url)
-        //        }
         if let imageUrl = URL(string: listOfCocktails[indexPath.row].strDrinkThumb) {
             let token = loader.loadImage(imageUrl) { result in
                 do {
@@ -81,27 +77,3 @@ extension CocktailsTableViewController: CocktailManagerDelegate {
     }
 }
 
-//extension UIImageView{
-//
-//     func setImageFromURl(ImageUrl: String){
-//
-//         if let url = NSURL(string: ImageUrl) {
-//             if let imagedata = NSData(contentsOf: url as URL) {
-//                 self.image = UIImage(data: imagedata as Data)
-//             }
-//         }
-//     }
-// }
-//extension UIImageView {
-//    func load(url: URL) {
-//        DispatchQueue.global().async { [weak self] in
-//            if let data = try? Data(contentsOf: url) {
-//                if let image = UIImage(data: data) {
-//                    DispatchQueue.main.async {
-//                        self?.image = image
-//                    }
-//                }
-//            }
-//        }
-//    }
-//}

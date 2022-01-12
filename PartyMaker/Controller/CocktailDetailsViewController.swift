@@ -8,14 +8,26 @@
 import UIKit
 
 class CocktailDetailsViewController: UIViewController {
+    
     var drink: Drink?
     
-    @IBOutlet weak var cocktailTitle: UITextField!
+    @IBOutlet weak var cocktailTitle: UILabel!
     @IBOutlet weak var cocktailImage: UIImageView!
-    
     @IBOutlet weak var totalNumber: UILabel!
-    
-    @IBOutlet weak var cocktailDescription: UITextField!
+    @IBOutlet weak var cocktailDescription: UILabel!
+    @IBOutlet weak var cocktailBackgroud: UILabel!
+    @IBOutlet weak var numberOfCocktails: UILabel!
+    override func viewDidLoad() {
+        
+        cocktailTitle.text = drink?.strDrink
+        cocktailDescription.text = drink?.strInstructions
+//        cocktailTitle.layer.cornerRadius = cocktailTitle.frame.size.height / 5
+        let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
+        backgroundImage.image = UIImage(named: "background")
+        backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
+        self.view.insertSubview(backgroundImage, at: 0)
+        
+    }
     
     @IBAction func numberOfCocktails(_ sender: UIStepper) {
     }
@@ -25,27 +37,5 @@ class CocktailDetailsViewController: UIViewController {
     
     @IBAction func addButtonPressed(_ sender: UIButton) {
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        cocktailTitle.text = drink?.strDrink
-        cocktailDescription.text = drink?.strInstructions
-    }
-    
-//    func showDetails(drink: Drink) {
-//
-////        cocktailTitle.text = drink.strDrink
-//////        cocktailImage.image = drink.strDrinkThumb
-////        cocktailDescription.text = drink.strInstructions
-//    }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

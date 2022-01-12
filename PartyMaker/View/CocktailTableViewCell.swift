@@ -14,6 +14,11 @@ class CocktailTableViewCell: UITableViewCell {
     
     var onReuse: () -> Void = {}
     
+//    override func prepareForReuse() {
+//      cellImageView.image = nil
+//      cellImageView.cancelImageLoad()
+//    }
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         onReuse()
