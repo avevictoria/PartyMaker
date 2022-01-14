@@ -8,28 +8,28 @@
 import UIKit
 
 class CocktailTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var cocktailTitle: UILabel!
     @IBOutlet weak var cocktailImage: UIImageView!
     
     var onReuse: () -> Void = {}
     
-//    override func prepareForReuse() {
-//      cellImageView.image = nil
-//      cellImageView.cancelImageLoad()
-//    }
+    override func prepareForReuse() {
+        cocktailImage.image = nil
+        cocktailImage.cancelImageLoad()
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()
         onReuse()
         cocktailImage.image = nil
-//        contentView.layer.cornerRadius = contentView.frame.size.height / 5
+        //        contentView.layer.cornerRadius = contentView.frame.size.height / 5
         // Initialization code
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     

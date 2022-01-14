@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -9,12 +9,13 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CocktailDetailsViewController" customModule="PartyMaker" customModuleProvider="target">
             <connections>
-                <outlet property="cocktailBackgroud" destination="qQv-MH-zAz" id="4Al-Sb-t9N"/>
+                <outlet property="cocktailBackground" destination="dGa-RQ-6Gv" id="GCX-cy-n6g"/>
                 <outlet property="cocktailDescription" destination="oVG-aQ-KmJ" id="6pr-DG-3AY"/>
                 <outlet property="cocktailImage" destination="WKQ-UK-f5T" id="9eI-mv-HO6"/>
                 <outlet property="cocktailTitle" destination="3XC-6A-h8r" id="Svn-Dl-f6v"/>
-                <outlet property="numberOfCocktails" destination="3E9-NW-a6j" id="8SB-uf-jpc"/>
-                <outlet property="totalNumber" destination="UEY-fd-GeM" id="XIP-wK-Pts"/>
+                <outlet property="listOfCocktailsIngidients" destination="UEY-fd-GeM" id="XIP-wK-Pts"/>
+                <outlet property="measuresToIngridients" destination="le9-cE-Kjm" id="DOH-wQ-lXQ"/>
+                <outlet property="quantityOfCocktails" destination="3E9-NW-a6j" id="8SB-uf-jpc"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -23,103 +24,130 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qQv-MH-zAz" userLabel="Cocktail Background">
-                    <rect key="frame" x="20" y="54" width="374" height="708"/>
-                    <color key="backgroundColor" red="0.76862745099999996" green="0.27058823529999998" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cocktail Description" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVG-aQ-KmJ">
-                    <rect key="frame" x="40" y="147.5" width="334" height="16.5"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
-                    <color key="textColor" red="0.18823529410000001" green="0.22352941179999999" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WKQ-UK-f5T">
-                    <rect key="frame" x="40" y="184" width="200" height="200"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="200" id="lwl-qT-Fyx"/>
-                        <constraint firstAttribute="width" constant="200" id="x6u-9t-EzA"/>
-                    </constraints>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cocktail Details" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEY-fd-GeM">
-                    <rect key="frame" x="40" y="404" width="334" height="16.5"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="15"/>
-                    <color key="textColor" red="0.18823529410000001" green="0.22352941179999999" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpQ-0T-Fc6" userLabel="Add button">
-                    <rect key="frame" x="123" y="795.5" width="168" height="41.5"/>
-                    <color key="backgroundColor" red="0.81176470590000005" green="0.41568627450000001" blue="0.52941176469999995" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
-                    <color key="tintColor" red="0.18823529411764706" green="0.22352941176470587" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
-                    <state key="normal" title="Button"/>
-                    <buttonConfiguration key="configuration" style="plain" title="Add Cocktails ">
-                        <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
-                    </buttonConfiguration>
-                    <connections>
-                        <action selector="addButtonPressed:" destination="-1" eventType="touchUpInside" id="XhC-xX-LJR"/>
-                    </connections>
-                </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cocktail Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XC-6A-h8r">
-                    <rect key="frame" x="91" y="64" width="232.5" height="43.5"/>
-                    <color key="backgroundColor" red="0.96862745098039216" green="0.84313725490196079" blue="0.58039215686274503" alpha="0.5" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
-                    <color key="textColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="hWA-HZ-080">
-                    <rect key="frame" x="203" y="184" width="171" height="197"/>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="33" translatesAutoresizingMaskIntoConstraints="NO" id="Cai-rT-J8A">
+                    <rect key="frame" x="20" y="54" width="374" height="808"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E9-NW-a6j" userLabel="Number of Cocktails">
-                            <rect key="frame" x="74" y="0.0" width="23" height="45.5"/>
-                            <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
-                            <color key="textColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wln-um-gKd" userLabel="Quantity">
-                            <rect key="frame" x="38.5" y="69.5" width="94" height="32"/>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dGa-RQ-6Gv">
+                            <rect key="frame" x="20" y="0.0" width="334.33333333333331" height="730"/>
+                            <subviews>
+                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Hpa-wt-JpK">
+                                    <rect key="frame" x="20" y="10" width="294.33333333333331" height="77.666666666666671"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Cocktail Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3XC-6A-h8r">
+                                            <rect key="frame" x="31.000000000000014" y="0.0" width="232.33333333333337" height="43.666666666666664"/>
+                                            <color key="backgroundColor" red="0.96862745098039216" green="0.84313725490196079" blue="0.58039215686274503" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="40"/>
+                                            <color key="textColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Cocktail description" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oVG-aQ-KmJ">
+                                            <rect key="frame" x="57" y="53.666666666666671" width="180" height="24"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
+                                            <color key="textColor" red="0.18823529410000001" green="0.22352941179999999" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTA-rC-bX1">
+                                    <rect key="frame" x="20" y="97.666666666666657" width="294.33333333333331" height="199.99999999999997"/>
+                                    <subviews>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="WKQ-UK-f5T">
+                                            <rect key="frame" x="0.0" y="0.0" width="200" height="200"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="200" id="pin-Dp-J7b"/>
+                                                <constraint firstAttribute="height" constant="200" id="sTY-e3-THl"/>
+                                            </constraints>
+                                        </imageView>
+                                        <stackView opaque="NO" contentMode="top" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hWA-HZ-080">
+                                            <rect key="frame" x="200" y="0.0" width="94.333333333333314" height="200"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3E9-NW-a6j" userLabel="Number of Cocktails">
+                                                    <rect key="frame" x="35.666666666666686" y="0.0" width="23" height="45.666666666666664"/>
+                                                    <fontDescription key="fontDescription" name="MarkerFelt-Wide" family="Marker Felt" pointSize="35"/>
+                                                    <color key="textColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minimumValue="1" maximumValue="100" translatesAutoresizingMaskIntoConstraints="NO" id="wln-um-gKd" userLabel="Quantity">
+                                                    <rect key="frame" x="0.0" y="91.333333333333343" width="94" height="32"/>
+                                                    <connections>
+                                                        <action selector="numberOfCocktails:" destination="-1" eventType="valueChanged" id="WYI-za-N26"/>
+                                                    </connections>
+                                                </stepper>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" segmentControlStyle="plain" selectedSegmentIndex="0" id="D9K-aa-Ypv" userLabel="Metrics">
+                                                    <rect key="frame" x="13.666666666666657" y="169" width="67" height="32"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <segments>
+                                                        <segment title="ml"/>
+                                                        <segment title="oz"/>
+                                                    </segments>
+                                                    <connections>
+                                                        <action selector="metrics:" destination="-1" eventType="valueChanged" id="vQ8-W7-n2d"/>
+                                                    </connections>
+                                                </segmentedControl>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                </stackView>
+                                <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Xhs-d7-JHu">
+                                    <rect key="frame" x="20" y="307.66666666666669" width="294.33333333333331" height="24"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingridient" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UEY-fd-GeM" userLabel="List Of Cocktail Ingridients">
+                                            <rect key="frame" x="0.0" y="0.0" width="142" height="24"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
+                                            <color key="textColor" red="0.18823529410000001" green="0.22352941179999999" blue="0.32156862749999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100 ml" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="le9-cE-Kjm" userLabel="Measures To Ingridients">
+                                            <rect key="frame" x="152" y="0.0" width="142.33333333333337" height="24"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="22"/>
+                                            <color key="textColor" red="0.1333333333" green="0.1843137255" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                </stackView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.76862745099999996" green="0.27058823529999998" blue="0.41176470590000003" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="mTA-rC-bX1" firstAttribute="leading" secondItem="dGa-RQ-6Gv" secondAttribute="leading" constant="20" id="6IH-a4-rGG"/>
+                                <constraint firstItem="Hpa-wt-JpK" firstAttribute="leading" secondItem="dGa-RQ-6Gv" secondAttribute="leading" constant="20" id="9eT-WZ-9Gp"/>
+                                <constraint firstAttribute="trailing" secondItem="Xhs-d7-JHu" secondAttribute="trailing" constant="20" id="CBg-xe-J9f"/>
+                                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Xhs-d7-JHu" secondAttribute="bottom" constant="20" id="Ic4-gu-2cT"/>
+                                <constraint firstAttribute="trailing" secondItem="Hpa-wt-JpK" secondAttribute="trailing" constant="20" id="TBV-gt-hDt"/>
+                                <constraint firstItem="Xhs-d7-JHu" firstAttribute="top" secondItem="mTA-rC-bX1" secondAttribute="bottom" constant="10" id="aDW-uL-cgA"/>
+                                <constraint firstItem="Hpa-wt-JpK" firstAttribute="top" secondItem="dGa-RQ-6Gv" secondAttribute="top" constant="10" id="b7W-0C-La2"/>
+                                <constraint firstItem="Xhs-d7-JHu" firstAttribute="leading" secondItem="dGa-RQ-6Gv" secondAttribute="leading" constant="20" id="bAq-u0-Klh"/>
+                                <constraint firstAttribute="trailing" secondItem="mTA-rC-bX1" secondAttribute="trailing" constant="20" id="oQ6-m0-uRB"/>
+                                <constraint firstItem="mTA-rC-bX1" firstAttribute="top" secondItem="Hpa-wt-JpK" secondAttribute="bottom" constant="10" id="sle-aT-Rtn"/>
+                            </constraints>
+                        </view>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NpQ-0T-Fc6" userLabel="Add button">
+                            <rect key="frame" x="156" y="763" width="62" height="45"/>
+                            <color key="backgroundColor" red="0.81176470590000005" green="0.41568627450000001" blue="0.52941176469999995" alpha="0.84705882349999995" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="45" id="mNw-eO-zCG"/>
+                            </constraints>
+                            <color key="tintColor" red="0.18823529411764706" green="0.22352941176470587" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Add">
+                                <fontDescription key="titleFontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="25"/>
+                            </buttonConfiguration>
                             <connections>
-                                <action selector="numberOfCocktails:" destination="-1" eventType="valueChanged" id="WYI-za-N26"/>
+                                <action selector="addButtonPressed:" destination="-1" eventType="touchUpInside" id="XhC-xX-LJR"/>
                             </connections>
-                        </stepper>
-                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="D9K-aa-Ypv" userLabel="Metrics">
-                            <rect key="frame" x="20" y="125.5" width="131" height="72.5"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <segments>
-                                <segment title="First"/>
-                                <segment title="Second"/>
-                            </segments>
-                            <connections>
-                                <action selector="metrics:" destination="-1" eventType="valueChanged" id="vQ8-W7-n2d"/>
-                            </connections>
-                        </segmentedControl>
+                        </button>
                     </subviews>
                 </stackView>
             </subviews>
-            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <viewLayoutGuide key="safeArea" id="wtn-V4-LNH"/>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="UEY-fd-GeM" firstAttribute="top" secondItem="WKQ-UK-f5T" secondAttribute="bottom" constant="20" id="3U9-E9-z6B"/>
-                <constraint firstItem="qQv-MH-zAz" firstAttribute="trailing" secondItem="hWA-HZ-080" secondAttribute="trailing" constant="20" id="8dm-Gd-zpp"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="qQv-MH-zAz" secondAttribute="bottom" constant="100" id="AfX-iH-9O3"/>
-                <constraint firstItem="qQv-MH-zAz" firstAttribute="trailing" secondItem="UEY-fd-GeM" secondAttribute="trailing" constant="20" id="D9f-lT-6q7"/>
-                <constraint firstItem="NpQ-0T-Fc6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="FOR-Zx-enR"/>
-                <constraint firstItem="WKQ-UK-f5T" firstAttribute="top" secondItem="oVG-aQ-KmJ" secondAttribute="bottom" constant="20" id="JIW-Fn-Noe"/>
-                <constraint firstItem="WKQ-UK-f5T" firstAttribute="leading" secondItem="qQv-MH-zAz" secondAttribute="leading" constant="20" id="KpZ-uC-T7u"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="NpQ-0T-Fc6" secondAttribute="bottom" constant="25" id="Nin-PA-ZmZ"/>
-                <constraint firstItem="qQv-MH-zAz" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="20" id="ZX0-z7-Fyp"/>
-                <constraint firstItem="qQv-MH-zAz" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="anF-aL-oxU"/>
-                <constraint firstItem="oVG-aQ-KmJ" firstAttribute="leading" secondItem="qQv-MH-zAz" secondAttribute="leading" constant="20" id="dzw-8y-TOB"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="qQv-MH-zAz" secondAttribute="trailing" constant="20" id="fIQ-1z-A6q"/>
-                <constraint firstItem="3XC-6A-h8r" firstAttribute="top" secondItem="qQv-MH-zAz" secondAttribute="top" constant="10" id="fof-LY-Bzs"/>
-                <constraint firstItem="oVG-aQ-KmJ" firstAttribute="top" secondItem="3XC-6A-h8r" secondAttribute="bottom" constant="40" id="jmo-nc-56L"/>
-                <constraint firstItem="UEY-fd-GeM" firstAttribute="leading" secondItem="qQv-MH-zAz" secondAttribute="leading" constant="20" id="kE7-H9-7Go"/>
-                <constraint firstItem="3XC-6A-h8r" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="p2o-Eh-FXp"/>
-                <constraint firstItem="hWA-HZ-080" firstAttribute="top" secondItem="oVG-aQ-KmJ" secondAttribute="bottom" constant="20" id="seG-FE-OYp"/>
-                <constraint firstItem="qQv-MH-zAz" firstAttribute="trailing" secondItem="oVG-aQ-KmJ" secondAttribute="trailing" constant="20" id="v8Z-1B-Cqr"/>
+                <constraint firstItem="wtn-V4-LNH" firstAttribute="bottom" secondItem="Cai-rT-J8A" secondAttribute="bottom" id="ICC-fl-wR4"/>
+                <constraint firstItem="wtn-V4-LNH" firstAttribute="trailing" secondItem="Cai-rT-J8A" secondAttribute="trailing" constant="20" id="Pek-Eh-0aS"/>
+                <constraint firstItem="Cai-rT-J8A" firstAttribute="leading" secondItem="wtn-V4-LNH" secondAttribute="leading" constant="20" id="e68-UR-evK"/>
+                <constraint firstItem="Cai-rT-J8A" firstAttribute="top" secondItem="wtn-V4-LNH" secondAttribute="top" constant="10" id="upg-np-T2v"/>
             </constraints>
             <point key="canvasLocation" x="137.68115942028987" y="79.6875"/>
         </view>
