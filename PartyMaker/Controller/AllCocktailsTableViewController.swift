@@ -1,18 +1,18 @@
 //
-//  CocktailsTableViewController.swift
+//  ListOfAllCocktails.swift
 //  PartyMaker
 //
-//  Created by Victoria Nosik on 08.01.2022.
+//  Created by Victoria Nosik on 18.01.2022.
 //
 
 import UIKit
 
-class CocktailsTableViewController: UITableViewController {
-    
+class AllCocktailsTableViewController: UITableViewController {
+
     var listOfCocktails = [Drink]()
     var manager = CocktailManager()
     var loader = ImageLoader()
-    var link = "https://www.thecocktaildb.com/api/json/v2/9973533/randomselection.php"
+    var link = "https://www.thecocktaildb.com/api/json/v1/1/search.php?f=a"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,15 +47,17 @@ class CocktailsTableViewController: UITableViewController {
         
         let cell = tableView.cellForRow(at: indexPath) as! CocktailTableViewCell
         cocktailDetails.cocktailPicture = cell.cocktailImage.image
+        
+        
     }
     func setBackground () {
-        title = "Random Cocktails"
-        tableView.backgroundView = UIImageView(image: UIImage(named: "background"))
+        title = "All Cocktails"
+        tableView.backgroundView = UIImageView(image: UIImage(named: "allcocktails"))
         tableView.backgroundView?.alpha = 0.4
     }
 }
 
-extension CocktailsTableViewController: CocktailManagerDelegate {
+extension AllCocktailsTableViewController: CocktailManagerDelegate {
     func didUpdateName(drinks: [Drink]) {
         listOfCocktails = drinks
         tableView.reloadData()

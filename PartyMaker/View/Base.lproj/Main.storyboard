@@ -16,14 +16,62 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="flq-Jd-meq" kind="relationship" relationship="rootViewController" id="nmH-SC-EZp"/>
+                        <segue destination="2JD-xf-Abq" kind="relationship" relationship="rootViewController" id="5z0-5w-5ef"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LsT-3V-MpJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-872" y="-387"/>
+            <point key="canvasLocation" x="-1920" y="613"/>
         </scene>
-        <!--Cocktails Table View Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="uud-ia-m5M">
+            <objects>
+                <tabBarController id="2JD-xf-Abq" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Kle-sx-sIK"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="BvZ-W2-FT6">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="flq-Jd-meq" kind="relationship" relationship="viewControllers" id="imC-Sk-nNI"/>
+                        <segue destination="GcR-rx-X25" kind="relationship" relationship="viewControllers" id="fH4-R2-O4T"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VR1-ZA-qYG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-982" y="614"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="hwI-x5-zCY">
+            <objects>
+                <tableViewController id="GcR-rx-X25" customClass="AllCocktailsTableViewController" customModule="PartyMaker" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ioG-44-MPI">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="alC-jN-N41">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="alC-jN-N41" id="I3P-MI-Rwk">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GcR-rx-X25" id="xcW-NH-Vr1"/>
+                            <outlet property="delegate" destination="GcR-rx-X25" id="3q2-aM-sWd"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="g7N-T9-h9h"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VKw-cv-fOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="100" y="1100"/>
+        </scene>
+        <!--Item-->
         <scene sceneID="gTN-VT-HKX">
             <objects>
                 <tableViewController id="flq-Jd-meq" customClass="CocktailsTableViewController" customModule="PartyMaker" customModuleProvider="target" sceneMemberID="viewController">
@@ -46,11 +94,12 @@
                             <outlet property="delegate" destination="flq-Jd-meq" id="bUt-Ac-O8K"/>
                         </connections>
                     </tableView>
+                    <tabBarItem key="tabBarItem" title="Item" id="wcG-pQ-WXm"/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="a8j-Md-HNY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="372-qV-WeM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-23" y="-387"/>
+            <point key="canvasLocation" x="100" y="151"/>
         </scene>
     </scenes>
     <resources>

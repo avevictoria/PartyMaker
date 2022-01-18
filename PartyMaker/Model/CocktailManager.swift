@@ -16,8 +16,9 @@ struct CocktailManager {
     
     var delegate: CocktailManagerDelegate?
     
-    func getCocktail() {
-        let cocktailURL = "https://www.thecocktaildb.com/api/json/v2/9973533/popular.php"
+    func getCocktail(link: String) {
+        
+        let cocktailURL = link
         
         if let url = URL(string: cocktailURL) {
             let session = URLSession(configuration: .default)

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7549B1842796E5530042A95F /* AllCocktailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7549B1832796E5530042A95F /* AllCocktailsTableViewController.swift */; };
 		7557E8B22789ED8800106FC8 /* CocktailsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557E8B12789ED8800106FC8 /* CocktailsTableViewController.swift */; };
 		7557E8BD2789F20E00106FC8 /* CocktailData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557E8BC2789F20E00106FC8 /* CocktailData.swift */; };
 		7557E8BF2789F2AC00106FC8 /* CocktailManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7557E8BE2789F2AC00106FC8 /* CocktailManager.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7549B1832796E5530042A95F /* AllCocktailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCocktailsTableViewController.swift; sourceTree = "<group>"; };
 		7557E8B12789ED8800106FC8 /* CocktailsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailsTableViewController.swift; sourceTree = "<group>"; };
 		7557E8BC2789F20E00106FC8 /* CocktailData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailData.swift; sourceTree = "<group>"; };
 		7557E8BE2789F2AC00106FC8 /* CocktailManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocktailManager.swift; sourceTree = "<group>"; };
@@ -76,6 +78,7 @@
 				75F1397C278C65E90099C2CF /* UIViewControllerAndExtentions.swift */,
 				75F13982278DB7B80099C2CF /* CocktailDetailsViewController.swift */,
 				75F13983278DB7B80099C2CF /* CocktailDetailsViewController.xib */,
+				7549B1832796E5530042A95F /* AllCocktailsTableViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -196,6 +199,7 @@
 			files = (
 				75A804B62789DA3000B98F7B /* AppDelegate.swift in Sources */,
 				75F1397D278C65E90099C2CF /* UIViewControllerAndExtentions.swift in Sources */,
+				7549B1842796E5530042A95F /* AllCocktailsTableViewController.swift in Sources */,
 				7557E8BD2789F20E00106FC8 /* CocktailData.swift in Sources */,
 				75F13984278DB7B80099C2CF /* CocktailDetailsViewController.swift in Sources */,
 				7557E8C4278A032D00106FC8 /* CocktailTableViewCell.swift in Sources */,
