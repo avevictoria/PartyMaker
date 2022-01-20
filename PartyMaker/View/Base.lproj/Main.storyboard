@@ -10,6 +10,7 @@
         <!--Navigation Controller-->
         <scene sceneID="aEa-PC-yuX">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LsT-3V-MpJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController id="q1p-HG-B3J" sceneMemberID="viewController">
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="ouS-cz-Wpw">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -19,7 +20,6 @@
                         <segue destination="2JD-xf-Abq" kind="relationship" relationship="rootViewController" id="5z0-5w-5ef"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="LsT-3V-MpJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1920" y="613"/>
         </scene>
@@ -46,16 +46,21 @@
         <scene sceneID="hwI-x5-zCY">
             <objects>
                 <tableViewController id="GcR-rx-X25" customClass="AllCocktailsTableViewController" customModule="PartyMaker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ioG-44-MPI">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ioG-44-MPI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <searchBar key="tableHeaderView" contentMode="redraw" id="7X3-J8-6xt">
+                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </searchBar>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="alC-jN-N41">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="150" id="alC-jN-N41" userLabel="ReusableCell" customClass="CocktailTableViewCell" customModule="PartyMaker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="88.5" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="alC-jN-N41" id="I3P-MI-Rwk">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -65,7 +70,10 @@
                             <outlet property="delegate" destination="GcR-rx-X25" id="3q2-aM-sWd"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="g7N-T9-h9h"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="g7N-T9-h9h" userLabel="All Cocktails"/>
+                    <connections>
+                        <outlet property="searchBar" destination="7X3-J8-6xt" id="ao3-mx-VSl"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VKw-cv-fOJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -75,16 +83,16 @@
         <scene sceneID="gTN-VT-HKX">
             <objects>
                 <tableViewController id="flq-Jd-meq" customClass="CocktailsTableViewController" customModule="PartyMaker" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="224" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jh4-TB-Qgf">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="150" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="jh4-TB-Qgf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="224" id="EkG-2r-RIM" customClass="CocktailTableViewCell" customModule="PartyMaker" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="44.5" width="414" height="224"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="ReusableCell" rowHeight="150" id="EkG-2r-RIM" userLabel="ReusableCell" customClass="CocktailTableViewCell" customModule="PartyMaker" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="150"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="EkG-2r-RIM" id="0XS-Rp-idD">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="224"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -94,7 +102,7 @@
                             <outlet property="delegate" destination="flq-Jd-meq" id="bUt-Ac-O8K"/>
                         </connections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Item" id="wcG-pQ-WXm"/>
+                    <tabBarItem key="tabBarItem" title="Item" id="wcG-pQ-WXm" userLabel="Random Cocktails"/>
                     <navigationItem key="navigationItem" largeTitleDisplayMode="always" id="a8j-Md-HNY"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="372-qV-WeM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

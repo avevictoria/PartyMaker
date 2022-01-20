@@ -15,6 +15,8 @@ class CocktailDetailsViewController: UIViewController {
     var choosedMetrics: String?
     var ingridientsList = "Ingridients: \n \n"
     var measures = " \n \n"
+    var backgroundImageName = "background"
+    var requestDrinkDetails = false
     
     @IBOutlet weak var cocktailTitle: UILabel!
     @IBOutlet weak var cocktailImage: UIImageView!
@@ -30,7 +32,7 @@ class CocktailDetailsViewController: UIViewController {
         super.viewDidLoad()
         loadBackgroundImage()
         loadCocktailInfo()
-        
+
 
     }
     
@@ -48,7 +50,7 @@ class CocktailDetailsViewController: UIViewController {
     
     func loadBackgroundImage() {
         let backgroundImage = UIImageView(frame: UIScreen.main.bounds)
-        backgroundImage.image = UIImage(named: "background")
+        backgroundImage.image = UIImage(named: backgroundImageName)
         backgroundImage.contentMode = UIView.ContentMode.scaleAspectFill
         self.view.insertSubview(backgroundImage, at: 0)
     }
@@ -70,10 +72,16 @@ class CocktailDetailsViewController: UIViewController {
             for measure in choosenDrink.measures {
                 measures.append("\(measure) \n")
             }
+            if requestDrinkDetails {
+                runRequestDrinkDetails(id: choosenDrink.idDrink)
+            }
         }
         listOfCocktailsIngidients.text = ingridientsList
         measuresToIngridients.text = measures
         print(measures)
+    }
+    func runRequestDrinkDetails(id: String) {
+        
     }
     
 }

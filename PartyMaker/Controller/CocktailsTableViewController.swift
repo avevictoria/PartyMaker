@@ -30,6 +30,7 @@ class CocktailsTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! CocktailTableViewCell
         cell.cocktailTitle.text = listOfCocktails[indexPath.row].name
+        cell.mainIngridient.text = listOfCocktails[indexPath.row].ingridients[0]
         
         if let imageUrl = URL(string: listOfCocktails[indexPath.row].drinkImageLink) {
             cell.cocktailImage.loadImage(at: imageUrl)
@@ -47,6 +48,9 @@ class CocktailsTableViewController: UITableViewController {
         
         let cell = tableView.cellForRow(at: indexPath) as! CocktailTableViewCell
         cocktailDetails.cocktailPicture = cell.cocktailImage.image
+        cocktailDetails.backgroundImageName = "background"
+        
+        cocktailDetails.requestDrinkDetails = false
     }
     func setBackground () {
         title = "Random Cocktails"

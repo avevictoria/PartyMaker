@@ -15,6 +15,7 @@ struct CocktailData: Decodable {
 struct Drink: Decodable {
     
     let name: String
+    let idDrink: String
     let drinkImageLink: String
     let strInstructions: String
     let ingridients: [String]
@@ -23,6 +24,7 @@ struct Drink: Decodable {
     enum CodingKeys: String, CodingKey {
         
         case name = "strDrink"
+        case idDrink = "idDrink"
         case drinkImageLink = "strDrinkThumb"
         case instructions = "strInstructions"
         case ingridient1 = "strIngredient1"
@@ -60,8 +62,10 @@ struct Drink: Decodable {
     init(from decoder: Decoder) throws {
         let values = try decoder.container(keyedBy: CodingKeys.self)
         name = try values.decode(String.self, forKey: .name)
+        idDrink = try values.decode(String.self, forKey: .idDrink)
         drinkImageLink = (try? values.decode(String.self, forKey: .drinkImageLink)) ?? ""
         strInstructions = (try? values.decode(String.self, forKey: .instructions)) ?? ""
+        
         
         var ingridientsLocal: [String] = []
         var measuresLocal: [String] = []
@@ -175,4 +179,5 @@ struct Drink: Decodable {
         measures = measuresLocal
     }
 }
+
 

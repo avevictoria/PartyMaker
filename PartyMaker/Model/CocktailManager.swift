@@ -16,6 +16,17 @@ struct CocktailManager {
     
     var delegate: CocktailManagerDelegate?
     
+    var link1 = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Alcoholic"
+    var link2 = "https://www.thecocktaildb.com/api/json/v2/9973533/filter.php?a=Alcoholic"
+    
+    func getRandomCocktails() {
+        
+    }
+    
+    func getAllCoctails() {
+        
+    }
+    
     func getCocktail(link: String) {
         
         let cocktailURL = link
